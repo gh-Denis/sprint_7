@@ -17,6 +17,5 @@ public class OrderListTest {
         responseOrderList.assertThat()
                 .statusCode(200)
                 .body("orders", notNullValue());
-
     }
 }

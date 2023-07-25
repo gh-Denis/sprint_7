@@ -1,15 +1,10 @@
 package courier;
 
-import org.apache.commons.lang3.RandomStringUtils;
+import com.github.javafaker.Faker;
 
 public class CourierGenerator {
-    public Courier basicCourier() {
-        return new Courier("Jason", "12345678", "Alexandr");
-
-    }
-
+private static Faker faker = new Faker();
     public Courier getRandomCourier() {
-        return new Courier(RandomStringUtils.randomAlphanumeric(7), RandomStringUtils.randomAlphanumeric(7), RandomStringUtils.randomAlphanumeric(7));
-
+        return new Courier(faker.name().username(), faker.internet().password(), faker.name().firstName());
     }
 }

@@ -41,7 +41,7 @@ public class MakeAnOrderTest {
     @Test
     @DisplayName("Создание заказа с разными цветами")
     @Description("Создание заказа с одним из цветов/двумя цветами/без цвета")
-    public void MakeAnOrderWithDifferentColors() {
+    public void makeAnOrderWithDifferentColors() {
         Order order = new Order(color);
         ValidatableResponse responseCreateOrder = orderClient.createNewOrder(order);
         track = responseCreateOrder.extract().path("track");
@@ -52,7 +52,7 @@ public class MakeAnOrderTest {
 
     @After
     @Step("Отмена заказа")
-    public void CancelTestOrder() {
+    public void cancelTestOrder() {
         orderClient.cancelOrder(track);
     }
 }
